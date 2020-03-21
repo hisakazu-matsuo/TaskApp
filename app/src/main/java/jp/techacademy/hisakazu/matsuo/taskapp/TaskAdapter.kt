@@ -1,7 +1,7 @@
 package jp.techacademy.hisakazu.matsuo.taskapp
 
-import  android.content.Context
-import  android.view.LayoutInflater
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -9,10 +9,10 @@ import android.widget.TextView
 
 class TaskAdapter(context: Context): BaseAdapter() {
     private val mLayoutInflater: LayoutInflater
-    var taskList= mutableListOf<String>()
+    var taskList = mutableListOf<String>()
 
-    init{
-        this, mLayoutInflater= LayoutInflater. from(context)
+    init {
+        this.mLayoutInflater = LayoutInflater.from(context)
     }
 
     override fun getCount(): Int {
@@ -23,7 +23,7 @@ class TaskAdapter(context: Context): BaseAdapter() {
         return taskList[position]
     }
 
-    override fun getItemId(position: Int):  Long {
+    override fun getItemId(position: Int): Long {
         return 0
     }
 
