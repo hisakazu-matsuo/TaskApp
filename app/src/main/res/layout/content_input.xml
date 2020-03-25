@@ -24,29 +24,47 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title_edit_text"
         android:hint="内容" />
+
+    <EditText
+        android:id="@+id/category_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_edit_text"
+        android:layout_marginTop="48dp"
+        android:hint="分類" />
+
     <Button
         android:id="@+id/date_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/content_edit_text"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginRight="0dp"
         android:layout_toLeftOf="@+id/times_button"
-        android:text="----/--/--"
-        style="@style/Widget.AppCompat.Button.Borderless" />
+        android:text="----/--/--" />
+
     <Button
         android:id="@id/times_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/content_edit_text"
         android:layout_alignParentRight="true"
-        android:text="--:--"
-        style="@style/Widget.AppCompat.Button.Borderless" />
+        android:layout_marginTop="59dp"
+        android:layout_marginRight="11dp"
+        android:text="--:--" />
+
     <Button
         android:id="@+id/done_button"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/times_button"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="66dp"
+        android:layout_marginRight="17dp"
         android:text="決定" />
 
 </RelativeLayout>
