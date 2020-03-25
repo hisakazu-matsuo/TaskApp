@@ -1,5 +1,7 @@
 package jp.techacademy.hisakazu.matsuo.taskapp
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import io.realm.Realm
@@ -63,6 +65,18 @@ class MainActivity : AppCompatActivity() {
                 mRealm.beginTransaction()
                 results.deleteAllFromRealm()
                 mRealm.commitTransaction()
+
+                val resultIntent = Intent(applicationContext, TaskAlarmReceiver::class.java)
+                val resultPendingIntent = PendingIntent.getBroadcast(
+                    this@MainActivity,
+                    task.id,
+                    resultIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT
+
+                )
+
+                val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+                alarmManager. cancel(resultPendingIntent)
 
                 reloadListView()
             }
