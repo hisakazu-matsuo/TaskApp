@@ -10,6 +10,7 @@ import io.realm.RealmChangeListener
 import io.realm.Sort
 import android.content.Intent
 import android.support.v7.app.AlertDialog
+import android.util.Log
 
 const val EXTRA_TASK = "jp.techacademy.hisakazu.matsuo.taskapp.TASK"
 
@@ -87,6 +88,16 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+
+        //検索ボタンが押された時の処理
+        button.setOnClickListener(){
+//        val results = mRealm.where(Task::class.java).equalTo("category", "date".findAll()
+            Log.d ("UI","`ボタンが押されました")
+            val results = mRealm.where(Task::class.java).equalTo("category", editText.text.toString()).findAll().sort("date", Sort.ASCENDING)
+            mTaskAdapter.taskList = mRealm.copyFromRealm(results)
+            listView1.adapter = mTaskAdapter
+
+         }
 
         reloadListView()
     }
